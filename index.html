@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <p class="small-title">STUDENT PORTFOLIO</p>
+                <h1>Personal Profile</h1>
+            </div>
+
+            <button id="themeBtn" class="theme-btn">🌙</button>
+        </header>
+
+
+        <!-- Profile Card -->
+        <section class="profile-card">
+
+            <div class="photo-section">
+
+                <img
+                    id="profilePhoto"
+                    src="https://placehold.co/180x180?text=Photo"
+                    alt="Profile Photo"
+                >
+
+                <label for="photoInput" class="photo-button">
+                    📷 Change Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    hidden
+                >
+
+            </div>
+
+
+            <span class="student-badge">STUDENT</span>
+
+            <h2 id="profileName">Your Name</h2>
+
+            <p id="profileCollege" class="college">
+                Your College • Your Branch
+            </p>
+
+            <p id="profileBio" class="bio">
+                Write a short introduction about yourself here.
+            </p>
+
+
+            <!-- Completion -->
+            <div class="completion">
+
+                <div class="completion-text">
+                    <span>Profile Completion</span>
+                    <strong id="completionText">0%</strong>
+                </div>
+
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills -->
+        <section class="card">
+
+            <div class="section-heading">
+                <span class="section-icon">💡</span>
+
+                <div>
+                    <h3>Skills</h3>
+                    <p>My technical and creative skills</p>
+                </div>
+            </div>
+
+
+            <div id="skillsList" class="skills-list"></div>
+
+
+            <div class="add-skill">
+
+                <input
+                    type="text"
+                    id="skillInput"
+                    placeholder="Enter a skill"
+                    maxlength="25"
+                >
+
+                <button id="addSkillBtn">+</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Social Links -->
+        <section class="card">
+
+            <div class="section-heading">
+                <span class="section-icon">🔗</span>
+
+                <div>
+                    <h3>Connect With Me</h3>
+                    <p>My social and contact links</p>
+                </div>
+            </div>
+
+
+            <div class="social-grid">
+
+                <a
+                    id="github"
+                    href="#"
+                    target="_blank"
+                    class="social github"
+                >
+                    <span>🐙</span>
+
+                    <div>
+                        <strong>GitHub</strong>
+                        <small>View my projects</small>
+                    </div>
+                </a>
+
+
+                <a
+                    id="linkedin"
+                    href="#"
+                    target="_blank"
+                    class="social linkedin"
+                >
+                    <span>💼</span>
+
+                    <div>
+                        <strong>LinkedIn</strong>
+                        <small>Professional profile</small>
+                    </div>
+                </a>
+
+
+                <a
+                    id="instagram"
+                    href="#"
+                    target="_blank"
+                    class="social instagram"
+                >
+                    <span>📸</span>
+
+                    <div>
+                        <strong>Instagram</strong>
+                        <small>Follow me</small>
+                    </div>
+                </a>
+
+
+                <a
+                    id="email"
+                    href="#"
+                    class="social email"
+                >
+                    <span>✉️</span>
+
+                    <div>
+                        <strong>Email</strong>
+                        <small>Contact me</small>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Buttons -->
+        <section class="buttons">
+
+            <button id="editBtn" class="primary">
+                ✏️ Edit Profile
+            </button>
+
+            <button id="shareBtn" class="secondary">
+                📤 Share Profile
+            </button>
+
+            <button id="copyBtn" class="secondary">
+                📋 Copy Details
+            </button>
+
+            <button id="resetBtn" class="danger">
+                🔄 Reset Profile
+            </button>
+
+        </section>
+
+
+        <footer>
+            <strong>Personal Profile App</strong>
+            <p>Built with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </div>
+
+
+    <!-- Edit Modal -->
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <button id="closeBtn" class="close">×</button>
+
+            <h2>Edit Profile</h2>
+
+            <p class="modal-description">
+                Update your personal information.
+            </p>
+
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Your Name"
+            >
+
+
+            <label>College / Branch</label>
+
+            <input
+                type="text"
+                id="collegeInput"
+                placeholder="College • Branch"
+            >
+
+
+            <label>Short Bio</label>
+
+            <textarea
+                id="bioInput"
+                placeholder="Write something about yourself..."
+            ></textarea>
+
+
+            <label>GitHub URL</label>
+
+            <input
+                type="url"
+                id="githubInput"
+                placeholder="https://github.com/username"
+            >
+
+
+            <label>LinkedIn URL</label>
+
+            <input
+                type="url"
+                id="linkedinInput"
+                placeholder="https://linkedin.com/in/username"
+            >
+
+
+            <label>Instagram URL</label>
+
+            <input
+                type="url"
+                id="instagramInput"
+                placeholder="https://instagram.com/username"
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="emailInput"
+                placeholder="example@email.com"
+            >
+
+
+            <button
+                id="saveBtn"
+                class="primary save"
+            >
+                Save Profile
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

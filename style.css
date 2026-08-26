@@ -1,0 +1,672 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f3f5fa;
+    --card: #ffffff;
+    --text: #20242c;
+    --muted: #777d89;
+    --border: #e1e4eb;
+    --primary: #667eea;
+    --primary-dark: #5568d8;
+    --soft: #eef0ff;
+    --danger: #e74c3c;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body.dark {
+    --bg: #111318;
+    --card: #1b1e26;
+    --text: #f4f5f7;
+    --muted: #a6aab5;
+    --border: #30343e;
+    --soft: #292e49;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    padding: 25px 15px;
+
+    transition: 0.3s;
+}
+
+.container {
+    width: 100%;
+
+    max-width: 550px;
+
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.small-title {
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.header h1 {
+    font-size: 27px;
+
+    margin-top: 5px;
+}
+
+.theme-btn {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* PROFILE */
+
+.profile-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px var(--shadow);
+
+    margin-bottom: 18px;
+}
+
+.photo-section {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+}
+
+.photo-section img {
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--card);
+
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.photo-button {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.student-badge {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: var(--soft);
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    font-size: 28px;
+
+    margin-bottom: 6px;
+}
+
+.college {
+    color: var(--primary);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 14px;
+}
+
+.bio {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    max-width: 430px;
+
+    margin: auto;
+}
+
+
+/* COMPLETION */
+
+.completion {
+    text-align: left;
+
+    margin-top: 25px;
+}
+
+.completion-text {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-bottom: 7px;
+}
+
+.completion-text strong {
+    color: var(--primary);
+}
+
+.progress {
+    height: 7px;
+
+    background: var(--border);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+
+    width: 0%;
+
+    background: var(--primary);
+
+    transition: 0.4s;
+}
+
+
+/* GENERAL CARD */
+
+.card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 7px 23px var(--shadow);
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.section-icon {
+    width: 42px;
+
+    height: 42px;
+
+    background: var(--soft);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+}
+
+.section-heading h3 {
+    font-size: 17px;
+
+    margin-bottom: 3px;
+}
+
+.section-heading p {
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+
+/* SKILLS */
+
+.skills-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.skill {
+    background: var(--soft);
+
+    color: var(--primary);
+
+    border-radius: 20px;
+
+    padding: 8px 11px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.remove-skill {
+    border: none;
+
+    background: none;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.add-skill {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.add-skill input {
+    flex: 1;
+
+    padding: 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: var(--bg);
+
+    color: var(--text);
+}
+
+.add-skill input:focus {
+    border-color: var(--primary);
+}
+
+.add-skill button {
+    width: 45px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* SOCIAL */
+
+.social-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    transition: 0.2s;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px var(--shadow);
+}
+
+.social > span {
+    font-size: 22px;
+}
+
+.social strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+.social small {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.primary,
+.secondary,
+.danger {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary {
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+}
+
+.primary:hover {
+    background: var(--primary-dark);
+}
+
+.secondary {
+    background: var(--card);
+
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+}
+
+.secondary:hover {
+    background: var(--soft);
+}
+
+.danger {
+    background: transparent;
+
+    color: var(--danger);
+
+    border: 1px solid var(--danger);
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    color: var(--muted);
+
+    padding-bottom: 25px;
+
+    font-size: 12px;
+}
+
+footer p {
+    margin-top: 5px;
+
+    font-size: 10px;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 100;
+
+    padding: 15px;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 100%;
+
+    max-width: 450px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 5px;
+}
+
+.modal-description {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    background: none;
+
+    border: none;
+
+    font-size: 28px;
+
+    color: var(--muted);
+
+    cursor: pointer;
+}
+
+.modal-content label {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin: 13px 0 6px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border);
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.modal-content textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: var(--primary);
+}
+
+.save {
+    margin-top: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 18px 10px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .profile-card {
+        padding: 25px 18px;
+    }
+
+    .profile-card h2 {
+        font-size: 25px;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
